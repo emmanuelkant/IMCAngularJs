@@ -1,0 +1,32 @@
+<imc-header></imc-header>
+<section class="container">
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>IMC</th>
+                <th>Situação</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="patient in vm.patients">
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.gender}}</td>
+                <td>{{patient.weight}}</td>
+                <td>{{patient.height}}</td>
+                <td>{{patient.imc}}</td>
+                <td>{{patient.situation}}</td>
+                <td><a href="#" class="btn btn-info">Alterar</a>  <a href="#" class="btn btn-danger">Excluir</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-if="vm.patients.length == 0" class="text-center">
+        <p>Você não tem dados cadastrados, cadastre alguém primeiro e depois volte aqui.</p>
+    </div>
+</section>

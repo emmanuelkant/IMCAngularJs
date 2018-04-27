@@ -1,0 +1,15 @@
+<section class="row">
+    <article class="col-md-6 text-center">
+        <h3>Dados do Paciente</h3>
+        <p class="negrito">Nome: {{vm.lastPatient.name | uppercase}}</p>
+        <p class="negrito">Idade: {{vm.lastPatient.age}}</p>
+        <p class="negrito">Sexo: {{vm.lastPatient.gender | uppercase}}</p>
+        <p class="negrito">Peso: {{vm.lastPatient.weight}}</p>
+        <p class="negrito">Altura: {{vm.lastPatient.height}}</p>
+        <p class="negrito">IMC: {{vm.lastPatient.imc}}</p>
+    </article>
+    <article class="col-md-6 text-center">
+        <h3>Situação</h3>
+        <p>IMC: <span ng-class="{red: vm.lastPatient.imc > 80}">{{vm.lastPatient.situation}}</span></p>
+    </article>
+</section>
