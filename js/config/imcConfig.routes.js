@@ -15,6 +15,18 @@
                     templateUrl: "js/templates/history.html",
                     controllerAs: "vm",
                     controller: "imcHistoryCtrl"
+                })
+                .state("alterar", {
+                    url: "/alterar/{patientId}",
+                    templateUrl: "js/templates/update.html",
+                    controllerAs: "vm",
+                    controller: "imcUpdateCtrl"
+                })
+                .state("deletar", {
+                    url: "/delete/{patientId}",
+                    templateUrl: "js/templates/deleteConfirmation.html",
+                    controllerAs: "vm",
+                    controller: "imcDeleteCtrl"
                 });
         }]);
 })();

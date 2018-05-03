@@ -5,6 +5,9 @@
             templateUrl: "js/templates/situation.html",
             restrict: "E",
             controllerAs: "vm",
-            controller: "imcSituationCtrl"
+            controller: "imcSituationCtrl",
+            bindings: {
+            	lastPatient: "="
+            }
         });
 })();

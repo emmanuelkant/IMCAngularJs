@@ -22,7 +22,7 @@
                 <td>{{patient.height}}</td>
                 <td>{{patient.imc}}</td>
                 <td>{{patient.situation}}</td>
-                <td><a href="#" class="btn btn-info">Alterar</a>  <a href="#" class="btn btn-danger">Excluir</a></td>
+                <td><a ui-sref="alterar({patientId: patient.id})" href="#" class="btn btn-info">Alterar</a>  <a ui-sref="deletar({patientId: patient.id})" class="btn btn-danger">Excluir</a></td>
             </tr>
         </tbody>
     </table>

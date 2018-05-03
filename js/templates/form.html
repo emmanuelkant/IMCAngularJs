@@ -1,5 +1,5 @@
 <imc-header></imc-header>
-<section class="container mt-5" ng-controller="imcFormCtrl">
+<section class="container mt-5">
     <section class="row">
         <article class="col-md-6">
             <h2 class="mb-4">O que é o IMC</h2>
@@ -10,10 +10,10 @@
             <form class="form-group" name="imcForm">
                 <div class="row mb-3">
                     <div class="col-md-6 p-2">
-                        <input ng-required="true" name="name" class="form-control" type="text" ng-model="vm.patient.name" placeholder="Nome" />
+                        <input ng-required="true" name="name" class="form-control" type="text" ng-model="vm.patient.name" placeholder="Nome" minlength="4" ng-pattern="/\d/g"/>
                     </div>
                     <div class="col-md-3 p-2">
-                        <input ng-required="true" class="form-control" type="text" name="age" ng-model="vm.patient.age" placeholder="Idade" />
+                        <input ng-required="true" class="form-control" type="number" name="age" ng-model="vm.patient.age" placeholder="Idade" maxlength="2" />
                     </div>
                     <div class="col-md-3 p-2">
                         <select ng-required="true" class="form-control" ng-model="vm.patient.gender" ng-options="gender for gender in vm.gender" name="gender">
@@ -23,10 +23,10 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6 p-2">
-                        <input ng-required="true" class="form-control" type="text" name="weight" ng-model="vm.patient.weight" placeholder="Peso" />
+                        <input ng-required="true" class="form-control" type="number" name="weight" ng-model="vm.patient.weight" placeholder="Peso" />
                     </div>
                     <div class="col-md-6 p-2">
-                        <input ng-required="true" class="form-control" type="text" name="height" ng-model="vm.patient.height" placeholder="Altura" />
+                        <input ng-required="true" class="form-control" type="number" name="height" ng-model="vm.patient.height" placeholder="Altura" />
                     </div>
                 </div>
                 <button ng-disabled="!imcForm.$valid" href="#" class="btn btn-primary float-right mb-2" ng-click="vm.imcCalc(vm.patient, imcForm)">Calcular</button>
@@ -34,5 +34,5 @@
         </article>
     </section>
     <br>
-    <situation></situation>
+    <situation ng-if="vm.lastPatient" last-patient="vm.lastPatient"></situation>
 </section>

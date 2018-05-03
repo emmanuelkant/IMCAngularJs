@@ -1,4 +1,4 @@
-<section class="row">
+<section class="row border m-3">
     <article class="col-md-6 text-center">
         <h3>Dados do Paciente</h3>
         <p class="negrito">Nome: {{vm.lastPatient.name | uppercase}}</p>
@@ -10,6 +10,6 @@
     </article>
     <article class="col-md-6 text-center">
         <h3>Situação</h3>
-        <p>IMC: <span ng-class="{red: vm.lastPatient.imc > 80}">{{vm.lastPatient.situation}}</span></p>
+        <h2 class="negrito">IMC: <span ng-class="{red: vm.lastPatient.imc > 80}">{{vm.lastPatient.situation}}</span></h2>
     </article>
 </section>

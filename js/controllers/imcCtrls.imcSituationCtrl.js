@@ -1,12 +1,12 @@
 "use strict";
 (function() {
     angular.module("imcCtrls")
-        .controller("imcSituationCtrl", ["imcPatients", function(imcPatients) {
+        .controller("imcSituationCtrl", [function() {
             var vm = this;
-            vm.lastPatient = imcPatients.getLastPatient();
 
-            function haveChange() {
-                imcPatients.getPatient().lenght
+            vm.$onInit = function() {
+                $("#situation").slideDown("slow");
             };
+
         }]);
 })();
