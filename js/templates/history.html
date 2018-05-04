@@ -22,11 +22,12 @@
                 <td>{{patient.height}}</td>
                 <td>{{patient.imc}}</td>
                 <td>{{patient.situation}}</td>
-                <td><a ui-sref="alterar({patientId: patient.id})" href="#" class="btn btn-info">Alterar</a>  <a ui-sref="deletar({patientId: patient.id})" class="btn btn-danger">Excluir</a></td>
+                <td><a ui-sref="alterar({patientId: patient.id})" class="btn btn-info">Alterar</a>  <a class="btn btn-warning" ng-click="vm.clickedPatient = patient" >Detalhes</a>  <a ui-sref="deletar({patientId: patient.id})" class="btn btn-danger">Excluir</a></td>
             </tr>
         </tbody>
     </table>
     <div ng-if="vm.patients.length == 0" class="text-center">
         <p>Você não tem dados cadastrados, cadastre alguém primeiro e depois volte aqui.</p>
     </div>
+    <situation ng-if="vm.clickedPatient" patient="vm.clickedPatient"></situation>
 </section>

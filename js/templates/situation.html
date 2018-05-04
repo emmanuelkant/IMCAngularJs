@@ -1,15 +1,48 @@
 <section class="row border m-3">
     <article class="col-md-6 text-center">
         <h3>Dados do Paciente</h3>
-        <p class="negrito">Nome: {{vm.lastPatient.name | uppercase}}</p>
-        <p class="negrito">Idade: {{vm.lastPatient.age}}</p>
-        <p class="negrito">Sexo: {{vm.lastPatient.gender | uppercase}}</p>
-        <p class="negrito">Peso: {{vm.lastPatient.weight}}</p>
-        <p class="negrito">Altura: {{vm.lastPatient.height}}</p>
-        <p class="negrito">IMC: {{vm.lastPatient.imc}}</p>
+        <p class="negrito">Nome: {{vm.patient.name | uppercase}}</p>
+        <p class="negrito">Idade: {{vm.patient.age}} anos</p>
+        <p class="negrito">Sexo: {{vm.patient.gender | uppercase}}</p>
+        <p class="negrito">Peso: {{vm.patient.weight}}Kg</p>
+        <p class="negrito">Altura: {{vm.patient.height}}m</p>
+        <p class="negrito">IMC: {{vm.patient.imc}}</p>
     </article>
-    <article class="col-md-6 text-center">
+    <article class="col-md-6 text-center pb-3">
         <h3>Situação</h3>
-        <h2 class="negrito">IMC: <span ng-class="{red: vm.lastPatient.imc > 80}">{{vm.lastPatient.situation}}</span></h2>
+        <h2 class="negrito">IMC: <span ng-class="{red: vm.patient.imc > 80}">{{vm.patient.situation}}</span></h2>
+        <div ng-if="vm.patient.imc < 18.5">
+            <i class="fas fa-tint fa-3x oil"></i>
+        </div>
+        <div ng-if="vm.patient.imc >= 18.5 && vm.patient.imc <= 24.9">
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+        </div>
+        <div ng-if="vm.patient.imc > 24.9 && vm.patient.imc <= 29.9">
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+        </div>
+        <div ng-if="vm.patient.imc > 29.9 && vm.patient.imc <= 34.9">
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+        </div>
+        <div ng-if="vm.patient.imc > 34.9 && vm.patient.imc <= 39.9">
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+        </div>
+        <div ng-if="vm.patient.imc > 39.9">
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+            <i class="fas fa-tint fa-3x oil"></i>
+        </div>
     </article>
 </section>

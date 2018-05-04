@@ -7,7 +7,7 @@
             controllerAs: "vm",
             controller: "imcSituationCtrl",
             bindings: {
-            	lastPatient: "="
+            	patient: "="
             }
         });
 })();

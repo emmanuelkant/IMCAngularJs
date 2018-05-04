@@ -4,9 +4,5 @@
         .controller("imcSituationCtrl", [function() {
             var vm = this;
 
-            vm.$onInit = function() {
-                $("#situation").slideDown("slow");
-            };
-
         }]);
 })();

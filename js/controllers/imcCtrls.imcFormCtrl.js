@@ -9,6 +9,14 @@
             vm.imcCalc = imcCalc;
             vm.lastPatient = null;
 
+            function animations(){
+                $("#info").hover(function() {
+                    $("#box-info").slideDown(250, "swing");
+                }, function() {
+                    $("#box-info").slideUp(250, "swing");
+                });
+            };
+
             function imcCalc(patient, form) {
                 var test1 = (parseFloat(patient.height) * parseFloat(patient.height));
                 var test2 = parseFloat(patient.weight);
@@ -38,5 +46,8 @@
                     return "Obesidade Grau III";
                 }
             };
+
+            animations();
+
         }]);
 })();

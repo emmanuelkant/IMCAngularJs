@@ -6,11 +6,20 @@
             <p class="text-justify">O índice de massa corporal (IMC) é uma medida internacional usada para calcular se uma pessoa está no peso ideal. Desenvolvido pelo polímata Lambert Quételet no fim do século XIX, trata-se de um método fácil e rápido para a avaliação do nível de gordura de cada pessoa, sendo, por isso, um preditor internacional de obesidade adotado pela Organização Mundial da Saúde (OMS).</p>
         </article>
         <article class="col-md-6">
-            <h2 class="mb-4">Formulário de IMC</h2>
+            <h2 class="mb-4">Formulário de IMC <i id="info" class="fas fa-info-circle"></i></h2>
+            <div id="box-info">
+                <ul class="red">
+                    <li ng-class="{green: imcForm.name.$valid}" >O nome deve ter pelo menos 4 letras.</li>
+                    <li ng-class="{green: imcForm.age.$valid}" >A idade não pode ser maior de 99 anos.</li>
+                    <li ng-class="{green: imcForm.weight.$valid}" >O peso deve ser colocado em quilos.</li>
+                    <li ng-class="{green: imcForm.height.$valid}" >A altura deverá ser em metros com duas casas decimais para o centimetros.</li>
+                    <li ng-class="{green: !imcForm.height.$error.pattern && !imcForm.height.$error.required}" >Utilize ponto como separador decimal.</li>
+                </ul>
+            </div>
             <form class="form-group" name="imcForm">
                 <div class="row mb-3">
                     <div class="col-md-6 p-2">
-                        <input ng-required="true" name="name" class="form-control" type="text" ng-model="vm.patient.name" placeholder="Nome" minlength="4" ng-pattern="/\d/g"/>
+                        <input ng-required="true" name="name" class="form-control" type="text" ng-model="vm.patient.name" placeholder="Nome" minlength="4"/>
                     </div>
                     <div class="col-md-3 p-2">
                         <input ng-required="true" class="form-control" type="number" name="age" ng-model="vm.patient.age" placeholder="Idade" maxlength="2" />
@@ -26,7 +35,7 @@
                         <input ng-required="true" class="form-control" type="number" name="weight" ng-model="vm.patient.weight" placeholder="Peso" />
                     </div>
                     <div class="col-md-6 p-2">
-                        <input ng-required="true" class="form-control" type="number" name="height" ng-model="vm.patient.height" placeholder="Altura" />
+                        <input ng-required="true" class="form-control" type="number" name="height" ng-model="vm.patient.height" placeholder="Altura" ng-pattern="/^\d\.\d{2,2}$/g"/>
                     </div>
                 </div>
                 <button ng-disabled="!imcForm.$valid" href="#" class="btn btn-primary float-right mb-2" ng-click="vm.imcCalc(vm.patient, imcForm)">Calcular</button>
@@ -34,5 +43,5 @@
         </article>
     </section>
     <br>
-    <situation ng-if="vm.lastPatient" last-patient="vm.lastPatient"></situation>
+    <situation ng-if="vm.lastPatient" patient="vm.lastPatient"></situation>
 </section>

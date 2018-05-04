@@ -16,5 +16,19 @@ body{
 }
 
 .red{
-    color: red;
+    color: #E83D3B;
+}
+
+.green{
+    color: #28a745;
+}
+
+#box-info{
+	display: none;
+	background-color: #E6F4FF;
+	border: 2px solid #92A1B2;
+}
+
+.oil{
+	color: #B28934;
 }
